@@ -1,6 +1,6 @@
 ## Getting Started
 
-###1. Signup
+### 1. Signup
 ```python
 import Agvd from agvd
 handle = Agvd().signup(
@@ -12,7 +12,7 @@ handle = Agvd().signup(
 )
 ```
 
-###2. Login
+### 2. Login
 ```python
 import Agvd from agvd
 
@@ -23,7 +23,7 @@ handle = Agvd().login(
 
 ```
 
-###3 Variant Query
+### 3 Variant Query
 You need to be authenticated to for you to query the AGVD. On login, a token shall
 be supplied with which you'll submit as an argument to the
 query function. 
