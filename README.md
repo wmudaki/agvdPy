@@ -17,7 +17,7 @@ handle = Agvd().signup(
 import Agvd from agvd
 
 handle = Agvd().login(
-    user='user_id', 
+    user_id='user_id', 
     password='user_password'
 )
 

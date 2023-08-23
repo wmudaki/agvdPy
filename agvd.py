@@ -47,8 +47,8 @@ class Agvd:
     def login(self, **kwargs):
         """
         Allowed Keyword Arguments
-            user:
-                Unique user-id
+            user_id:
+                Unique user id
             password:
                 User's password
 
@@ -65,12 +65,6 @@ class Agvd:
                 A token supplied after user login; If user doesn't want
                 to log in first before making the query, the user can append their
                 user-id and password as keyword parameters in the query function
-
-            user:
-                unique user-id
-
-            password:
-                user password
 
             id:
                 List of IDs, these can be rs IDs (dbSNP)
@@ -148,7 +142,7 @@ class Agvd:
 
     @staticmethod
     def request(endpoint, params):
-        handle = requests.post(f'http://localhost:3000/agvd/{endpoint}', data=params)
+        handle = requests.post(f'https://agvd-rps.h3abionet.org/api/{endpoint}', json=params)
         return handle.json()
 
 
