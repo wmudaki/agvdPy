@@ -24,7 +24,7 @@ handle = Agvd().login(
 ```
 
 ### 3 Variant Query
-You need to be authenticated to for you to query the AGVD. On login, a token shall
+You need to be authenticated for you to query the AGVD. On login, a token shall
 be supplied with which you'll submit as an argument to the
 query function. 
 ```python
