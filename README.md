@@ -94,7 +94,7 @@ python agvd \
 
 To profile performance:
 ```bash
-python -m cProfile agvd_query_tool.py ...
+python -m cProfile agvd ...
 ```
 
 ---
