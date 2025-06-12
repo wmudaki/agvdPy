@@ -34,7 +34,7 @@ openpyxl
 ## 🔧 Usage
 
 ```bash
-python agvd.py \
+python agvd \
   --KEY YOUR_AGVD_API_KEY \
   --INFILE path/to/input.vcf \
   --OUTPUT path/to/output.csv \
@@ -84,7 +84,7 @@ Either:
 To test locally:
 
 ```bash
-python agvd.py \
+python agvd \
   -k test_key \
   -i examples/test.csv \
   -o out.csv \
