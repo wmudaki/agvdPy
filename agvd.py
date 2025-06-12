@@ -225,7 +225,7 @@ def run(args):
     setup_logging(args.verbose)
     logger.info("Starting AGVD Variant Processing")
 
-    if args.INFILE.lower().endswith(".vcf"):
+    if args.INFILE.lower().endswith(".vcf.gz") or args.INFILE.lower().endswith(".vcf"):
         process_vcf(args)
     else:
         process_table(args)

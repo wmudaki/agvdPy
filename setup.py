@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='agvd',
-    version='0.1.0',
+    version='0.1.1',
     description='AGVD Variant Query Command Line Tool',
     author='WMudaki',
     author_email='wilson@mudaki.co.ke',

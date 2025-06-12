@@ -1,2 +1,6 @@
 .idea
 .gitignore
+agvd.egg-info
+venv
+dist
+data
