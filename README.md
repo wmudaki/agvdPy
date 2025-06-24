@@ -13,6 +13,7 @@ The **AGVD Variant Query Tool** is a command-line utility for querying variant i
 - Dry-run mode for validation without querying
 - Exports enriched results and JSON summary
 - Multithreaded for faster processing
+- Supports "peek" query mode for quick variant lookups
 
 ---
 
@@ -54,6 +55,8 @@ python agvd \
 | `--dry-run`    | Validates the file without submitting queries |
 | `--verbose`    | Enables debug-level logging |
 | `--cache`      | Enables local query caching |
+| `--threads`    | Number of threads to use for parallel processing |
+| `--peek`       | Provide a list of variant IDs (or input file) to run a quick lookup without thresholding |
 
 ---
 
@@ -76,6 +79,44 @@ Either:
   - `African_MAF`: MAF value
   - `<Cluster>_MAF`: MAF per population cluster
 - A `_summary.json` with success/failure statistics
+
+---
+
+## 🔍 Peek Mode
+
+The **peek** mode lets you quickly retrieve availability and access URLs for variants without threshold-based filtering.
+
+### From file:
+```bash
+python agvd --peek --INFILE variants.txt
+```
+
+### From inline list:
+```bash
+python agvd --peek rs123 rs456 chr1:12345:A:G
+```
+
+Returns:
+```json
+[
+  {
+    "id": "rs123",
+    "status": "available",
+    "url": "https://agvd.afrigen-d.org/variant?id=rs123"
+  },
+  {
+    "id": "1-12345-A-G",
+    "status": "unavailable",
+    "url": null
+  }
+]
+```
+
+You can also call this in Python:
+```python
+from agvd.query import peek_variants
+results = peek_variants(["rs123", "chr1:12345:A:G"])
+```
 
 ---
 

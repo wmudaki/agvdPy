@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='agvd',
-    version='0.1.1',
+    version='0.1.2',
     description='AGVD Variant Query Command Line Tool',
     author='WMudaki',
     author_email='wilson@mudaki.co.ke',
@@ -10,7 +10,7 @@ setup(
     long_description_content_type="text/markdown",
     url='https://github.com/wmudaki/agvdPy',
     packages=find_packages(),
-    py_modules=['agvd', 'exceptions'],
+    py_modules=['agvd', 'exceptions', 'query', 'cli', 'utils', 'core'],
     install_requires=[
         'pysam',
         'tqdm',
@@ -20,7 +20,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'agvd=agvd:main'
+            'agvd=cli:main'
         ]
     },
     classifiers=[
